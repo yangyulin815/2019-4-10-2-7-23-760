@@ -1,9 +1,9 @@
 function price(x,fees,m){
-	if(x>2){}
+	if(x<2){}
 	else {
-		fees+=(x-2)*0.8;
+		fees=fees+(x-2)*0.8;
 		if(x>8){
-			fees+=(x-8)*0.4;
+			fees=fees+(x-8)*0.4;
 		}
 	}
 	return Math.round(fees+m*0.25);
