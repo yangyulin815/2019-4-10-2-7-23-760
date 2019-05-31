@@ -1,7 +1,7 @@
 const main = require('../main/main');
 
 describe('taxi fee', function () {
-    it('only within 2km ' , function() {
+    it('only within 2km' , function() {
         let inputs = {distance:1,parkTime:0};
         let summary = main(inputs.distance,inputs.parkTime);
         let expected = 6;
@@ -25,10 +25,22 @@ describe('taxi fee', function () {
         let expected = 18;
         expect(summary).toEqual(expected);
     });
-/*    it('more than 8km and no parking' , function() {
+    it('more than 8km and no parking' , function() {
         let inputs = {distance:15,parkTime:0};
-        let summary = main(inputs);
+        let summary = main(inputs.distance,inputs.parkTime);
         let expected = 19;
         expect(summary).toEqual(expected);
-    });*/
+    });
+        it('equal to 2km and no parking' , function() {
+        let inputs = {distance:2,parkTime:0};
+        let summary = main(inputs.distance,inputs.parkTime);
+        let expected = 6;
+        expect(summary).toEqual(expected);
+    });
+        it('equal to 8km and parking' , function() {
+        let inputs = {distance:8,parkTime:10};
+        let summary = main(inputs.distance,inputs.parkTime);
+        let expected = 13;
+        expect(summary).toEqual(expected);
+    });
 });
