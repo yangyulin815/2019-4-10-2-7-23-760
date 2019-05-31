@@ -3,17 +3,17 @@ const main = require('../main/main');
 describe('taxi fee', function () {
     it('only within 2km ' , function() {
         let inputs = {distance:1,parkTime:0};
-        let summary = main(inputs);
+        let summary = main(inputs.distance,inputs.parkTime);
         let expected = 6;
         expect(summary).toEqual(expected);
     });
-/*  it('within 2km and parking' , function() {
+    it('within 2km and parking' , function() {
         let inputs = {distance:1,parkTime:5};
-        let summary = main(inputs);
+        let summary = main(inputs.distance,inputs.parkTime);
         let expected = 7;
         expect(summary).toEqual(expected);
     });
-    it('between 2km and 8km and parking' , function() {
+/*    it('between 2km and 8km and parking' , function() {
         let inputs = {distance:7,parkTime:10};
         let summary = main(inputs);
         let expected = 13;
