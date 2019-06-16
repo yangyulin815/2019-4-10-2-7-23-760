@@ -1,6 +1,7 @@
 function price(x,fees,m){
 	if(x<=2){}
-	else {
+	else 
+	{
 		fees+=(x-2)*0.8;
 		if(x>8){
 			fees+=(x-8)*0.4;
